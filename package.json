@@ -1,0 +1,15 @@
+{
+  "name": "shapes_factory",
+  "version": "1.0.0",
+  "description": "A shapes generator",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "keywords": [],
+  "author": "Ejike-Nweze Olisa M.",
+  "license": "ISC",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
