@@ -19,16 +19,37 @@
   <body>
     <main>
       <section class="grid center container">
-        <div class="flex gap-15">
-          <div class="dropdown">
-            <button class="dropdown-button"><span>Shape</span></button>
-            <div class="dropdown-content"></div>
+        <div class="shape-factory">
+          <div class="flex gap-15">
+            <div class="dropdown">
+              <button class="dropdown-button shape-button">
+                <span></span>
+              </button>
+              <div class="dropdown-content shape-content">
+                <ul>
+                  <li>Circle</li>
+                  <li>Square</li>
+                </ul>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="dropdown-button color-button">
+                <span></span>
+              </button>
+              <div class="dropdown-content color-content">
+                <ul>
+                  <li>Blue</li>
+                  <li>Green</li>
+                  <li>Orange</li>
+                  <li>Pink</li>
+                  <li>Purple</li>
+                </ul>
+              </div>
+            </div>
+            <button class="create-button"><span>Create</span></button>
           </div>
-          <div class="dropdown">
-            <button class="dropdown-button"><span>Color</span></button>
-            <div class="dropdown-content"></div>
-          </div>
-          <button class="create-button"><span>Create</span></button>
+          <div class="shape-panel grid grid-20 gap-20"></div>
+          <p class="output"></p>
         </div>
       </section>
     </main>

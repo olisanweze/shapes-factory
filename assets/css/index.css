@@ -53,17 +53,92 @@ span {
   gap: 15px;
 }
 
+.gap-20 {
+  gap: 20px;
+}
+
 
 /*======================================================*/
 /*  Component                                           */
 /*======================================================*/
 
 .create-button {
-  width: 100px;
+  width: 130px;
   background-color: #088;
 }
 
+.create-button:hover {
+  background-color: #008892;
+}
+
 .dropdown-button {
-  width: 280px;
+  width: 240px;
   background-color: rgb(29 28 36);
+  text-align: left;
+  padding-left: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  margin-top: 2px;
+  border-radius: 5px;
+  display: none;
+  position: absolute;
+  background-color: rgb(31 30 38);
+  border: 1px solid rgb(245 245 245 / 0.05);
+  width: 240px;
+  z-index: 9;
+}
+
+.dropdown-content li {
+  color: #fff;
+  padding: 12px 20px;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-content li:hover {
+  background-color: rgb(29 28 36);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.shape-factory {
+  height: 700px;
+  width: 640px;
+}
+
+.shape-panel {
+  width: 640px;
+  height: 510px;
+  margin: 30px 0;
+  background-color: rgb(9, 8, 16);
+  border-radius: 5px;
+  padding: 25px;
+}
+
+.grid-20 {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.output {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
 }
