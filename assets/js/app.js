@@ -7,21 +7,20 @@
 
 'use strict';
 
-// This app requires a server to handle import statements and CORS issues
-import * as utils from './utils.js';
+import { select, selectAll, listen, create } from './utils.js';
 import { Shape } from './Shape.js';
 
 /* =====================================================*/
 /*  Global Variables                                    */
 /* =====================================================*/
 
-const shapeButton = utils.select('.shape-button span');
-const colorButton = utils.select('.color-button span');
-const selectShape = utils.selectAll('.shape-content li');
-const selectColor = utils.selectAll('.color-content li');
-const create = utils.select('.create-button');
-const output = utils.select('.output');
-const panel = utils.select('.shape-panel');
+const shapeButton = select('.shape-button span');
+const colorButton = select('.color-button span');
+const selectShape = selectAll('.shape-content li');
+const selectColor = selectAll('.color-content li');
+const createButton = select('.create-button');
+const output = select('.output');
+const panel = select('.shape-panel');
 const shapes = [];
 
 const colors = {
@@ -52,7 +51,7 @@ function setShape(element) {
 
 function createShape() {
   if (shapes.length < 20) {
-    let newDiv = utils.create('div'); 
+    let newDiv = create('div'); 
     setColor(newDiv);
     setShape(newDiv);
     panel.appendChild(newDiv);
@@ -76,19 +75,23 @@ function loadTexts() {
 }
 
 selectShape.forEach(shape => {
-  utils.listen('click', shape, () => {
+  listen('click', shape, () => {
     selectedShape = shape.innerText;
     shapeButton.innerText = shape.innerText;
   });
 });
 
 selectColor.forEach(color => {
-  utils.listen('click', color, () => {
+  listen('click', color, () => {
     selectedColor = color.innerText;
     colorButton.innerText = color.innerText;
   });
 });
 
-utils.listen('load', window, loadTexts);
-utils.listen('click', create, createShape);
-utils.listen('click', panel, getShapeInfo);
+/* =====================================================*/
+/*  Event Listeners                                     */
+/* =====================================================*/
+
+listen('load', window, loadTexts);
+listen('click', createButton, createShape);
+listen('click', panel, getShapeInfo);
